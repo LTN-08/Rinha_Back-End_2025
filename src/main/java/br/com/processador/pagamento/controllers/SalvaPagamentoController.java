@@ -15,7 +15,7 @@ public class SalvaPagamentoController {
     @Autowired
     private PagamentoRepository repository;
 
-    @PostMapping("pagamento")
+    @PostMapping("payments")
     public void salva(@RequestBody @Valid PagamentoRequestDTO requestDTO){
         PagamentoEntity pagamentoEntity = requestDTO.toModel();
         repository.save(pagamentoEntity);

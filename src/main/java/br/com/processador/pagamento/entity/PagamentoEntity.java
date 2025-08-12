@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @NoArgsConstructor
@@ -19,11 +20,13 @@ public class PagamentoEntity {
     private BigDecimal valor;
     private String status;
     private String quemProcessou;
+    private LocalDateTime horaQueProcessou;
 
     public PagamentoEntity(UUID uuidPagamento, BigDecimal valor) {
         this.uuidPagamento = uuidPagamento;
         this.valor = valor;
         this.status = "PENDENTE";
+        this.horaQueProcessou = LocalDateTime.now();
     }
 
 }

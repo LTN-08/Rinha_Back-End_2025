@@ -13,12 +13,12 @@ import java.util.UUID;
 public class PagamentoRequestDTO {
 
     @NotNull
-    private UUID uuidPagamento;
+    private UUID correlationId;
     @NotNull
-    private BigDecimal valor;
+    private BigDecimal amount;
 
     public PagamentoEntity toModel() {
-        return new PagamentoEntity(uuidPagamento, valor);
+        return new PagamentoEntity(correlationId, amount);
     }
 }
 
