@@ -9,7 +9,6 @@ import lombok.ToString;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-@Getter
 public class PagamentoRequestDTO {
 
     @NotNull
@@ -19,6 +18,14 @@ public class PagamentoRequestDTO {
 
     public PagamentoEntity toModel() {
         return new PagamentoEntity(correlationId, amount);
+    }
+
+    public @NotNull UUID getCorrelationId() {
+        return correlationId;
+    }
+
+    public @NotNull BigDecimal getAmount() {
+        return amount;
     }
 }
 
